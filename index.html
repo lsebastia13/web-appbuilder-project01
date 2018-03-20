@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!-- https://joanpere.github.io/JSArcGIS_Ejemplos/widgets/baseMapGallery.html -->
+
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Map Gallery</title>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/3.21/esri/themes/calcite/dijit/calcite.css">
+  <link rel="stylesheet" href="https://js.arcgis.com/3.21/esri/themes/calcite/esri/esri.css">
+  <script src="https://js.arcgis.com/3.21/"></script>
+
+  <style>
+    html,
+    body,
+    #map {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+    }
+  </style>
+
+  <script>
+    var map;
+    require(["esri/map",
+        "esri/dijit/BasemapGallery",
+        "dojo/domReady!"
+      ],
+      function(Map,
+        basemapGallery) {
+        // code to create the map and add a basemap will go here
+
+        map = new Map("mapDiv", {
+          center: [3, 38.485],
+          zoom: 3,
+          basemap: "hybrid",
+        });
+
+        basemapGallery = new basemapGallery({
+          showArcGISBasemaps: true,
+          // title: "Modelo Agua",
+          // thumbnailUrl: "img/waterThumb.png",
+          map: map
+        }, "basemapGallery");
+        basemapGallery.startup();
+        //        basemapsGallery.push(waterBasemap);
+
+      });
+  </script>
+
+</head>
+
+<body class="calcite">
+
+  <div id="mapDiv" class "mapDiv">
+    <div id="basemapGallery"></div>
+
+    <!-- <div id="mapDiv" class "mapDiv"></div>
+  <div class="BasemapToggle" role="presentation" style="display:block" id="BasemapToggle" </div> -->
+
+
+    <!-- Layout de Dojo
+  var map;
+require([
+  "esri/map", "esri/dijit/BasemapGallery", "esri/arcgis/utils",
+  "dojo/parser",
+
+  "dijit/layout/BorderContainer", "dijit/layout/ContentPane", "dijit/TitlePane",
+  "dojo/domReady!"
+], function(
+  Map, BasemapGallery, arcgisUtils,
+  parser
+) {
+  parser.parse();
+
+  <div style="position:absolute; right:20px; top:10px; z-Index:999;">
+     <div data-dojo-type="dijit/TitlePane"
+          data-dojo-props="title:'Switch Basemap', open:true">
+       <div data-dojo-type="dijit/layout/ContentPane" style="width:380px; height:280px; overflow:auto;">
+         <div id="basemapGallery"></div>
+       </div>
+     </div>
+   </div>
+
+  "-->
+</body>
+
+</html>

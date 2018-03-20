@@ -1,0 +1,63 @@
+body {
+  background-color: black;
+}
+.gallery .rock {
+  order: -1;
+}
+
+.img_box:nth-child(2n) {  /* 2n=even par */
+  /* display: none; */
+  display: none;
+}
+
+.gallery {
+  border: 3px solid darkblue;
+	max-width: 1014px;
+  margin: auto;
+  /*border: 4px solid black;*/
+  background-color: #ccc;
+}
+.gallery {
+  padding : 2px;
+  padding: 0.4vw;
+  font-size: 0;
+  display: -ms-flexbox;
+  -ms-flex-wrap: wrap;
+  -ms-flex-direction: column;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  display: -webkit-box;
+  display: flex;
+}
+.gallery div {
+  -webkit-box-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  width: 200px;
+  margin: 0.5vw;
+}
+.gallery div img {
+  width: 100%;
+  height: auto;
+}
+
+
+/*BLUR*/
+.blur img {
+  -webkit-transition: all .5s ease;
+     -moz-transition: all .5s ease;
+       -o-transition: all .5s ease;
+      -ms-transition: all .5s ease;
+          transition: all .5s ease;
+}
+
+.blur img:hover {
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
+}
+/*@media screen and (max-width: 400px) {
+  .gallery div { margin: 2px 0; }
+  .gallery { padding: 0; }
+  .gallery-container { margin-bottom: 20px; }
+  .flexbox-glallery-container .img_box { margin-bottom:20px }
+}*/
